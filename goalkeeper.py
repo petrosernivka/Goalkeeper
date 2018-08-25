@@ -63,6 +63,9 @@ while run:
         if keys[pygame.K_UP]:
             if keep_position > 2:
                 keep_position -= 3
+        if keys[pygame.K_DOWN]:
+            if keep_position < 3:
+                keep_position += 3
 
         win.blit(keep_positions[keep_position], ((disp_width - 70) // 2, (disp_height - height_goal) // 2 + height_goal - 126))
         win.blit(ball, (shots[0][0] + 10.5 * i * shots[0][2], shots[0][1] + 10.5 * i * shots[0][3]))
