@@ -9,7 +9,7 @@ win = pygame.display.set_mode((disp_width, disp_height))
 pygame.display.set_caption('Goalkeeper Game')
 
 bg = pygame.image.load('bg.png')
-keep_positions = [(pygame.image.load('keep_1.png'), 20, 0),
+keep_positions = [(pygame.image.load('keep_1.png'), 223, 202),
                 (pygame.image.load('keep_2.png'), 563, 210),
                 (pygame.image.load('keep_3.png'), 1155, 590),
                 (pygame.image.load('keep_4.png'), 230, 345),
@@ -35,7 +35,7 @@ down = False
 
 cycle_time = 1000
 # shots = [(20, 0, 1, 1), (378, 0, 1, 1), (1155, 0, -1, 1), (20, 590, 1, -1), (378, 560, 1, -1), (1155, 590, -1, -1)]
-shots = [(378, 0, 1, 1)]
+shots = [(20, 0, 1, 1)]
 keep_position = 4
 
 run = True
