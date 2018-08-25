@@ -9,9 +9,12 @@ win = pygame.display.set_mode((disp_width, disp_height))
 pygame.display.set_caption('Goalkeeper Game')
 
 bg = pygame.image.load('bg.png')
-keep_positions = [pygame.image.load('keep_1.png'), pygame.image.load('keep_2.png'),
-                pygame.image.load('keep_3.png'), pygame.image.load('keep_4.png'),
-                pygame.image.load('keep_5.png'), pygame.image.load('keep_6.png')]
+keep_positions = [(pygame.image.load('keep_1.png'), 20, 0),
+                (pygame.image.load('keep_2.png'), 378, 0),
+                (pygame.image.load('keep_3.png'), 1155, 0),
+                (pygame.image.load('keep_4.png'), 20, 590),
+                (pygame.image.load('keep_5.png'), 565, 294),
+                (pygame.image.load('keep_6.png'), 1155, 590)]
 ball = pygame.image.load('ball.png')
 
 width_keep = 70
@@ -67,7 +70,7 @@ while run:
             if keep_position < 3:
                 keep_position += 3
 
-        win.blit(keep_positions[keep_position], ((disp_width - 70) // 2, (disp_height - height_goal) // 2 + height_goal - 126))
+        win.blit(keep_positions[keep_position][0], (keep_positions[keep_position][1], keep_positions[keep_position][2]))
         win.blit(ball, (shots[0][0] + 10.5 * i * shots[0][2], shots[0][1] + 10.5 * i * shots[0][3]))
         pygame.display.update()
         i += 1
