@@ -14,7 +14,7 @@ keep_positions = [(pygame.image.load('keep_1.png'), 20, 0),
                 (pygame.image.load('keep_3.png'), 1155, 590),
                 (pygame.image.load('keep_4.png'), 230, 345),
                 (pygame.image.load('keep_5.png'), 565, 294),
-                (pygame.image.load('keep_6.png'), 1155, 590)]
+                (pygame.image.load('keep_6.png'), 802, 343)]
 ball = pygame.image.load('ball.png')
 
 width_keep = 70
@@ -34,7 +34,8 @@ up = False
 down = False
 
 cycle_time = 1000
-shots = [(20, 0, 1, 1), (378, 0, 1, 1), (1155, 0, -1, 1), (20, 590, 1, -1), (378, 560, 1, -1), (1155, 590, -1, -1)]
+# shots = [(20, 0, 1, 1), (378, 0, 1, 1), (1155, 0, -1, 1), (20, 590, 1, -1), (378, 560, 1, -1), (1155, 590, -1, -1)]
+shots = [(1155, 590, -1, -1)]
 keep_position = 4
 
 run = True
