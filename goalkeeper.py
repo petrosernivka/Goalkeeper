@@ -11,8 +11,8 @@ pygame.display.set_caption('Goalkeeper Game')
 bg = pygame.image.load('bg.png')
 keep_positions = [(pygame.image.load('keep_1.png'), 20, 0),
                 (pygame.image.load('keep_2.png'), 378, 0),
-                (pygame.image.load('keep_3.png'), 1155, 0),
-                (pygame.image.load('keep_4.png'), 20, 590),
+                (pygame.image.load('keep_3.png'), 1155, 590),
+                (pygame.image.load('keep_4.png'), 230, 345),
                 (pygame.image.load('keep_5.png'), 565, 294),
                 (pygame.image.load('keep_6.png'), 1155, 590)]
 ball = pygame.image.load('ball.png')
