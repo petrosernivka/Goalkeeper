@@ -20,7 +20,7 @@ keep_positions = [(pygame.image.load('keep_1.png'), 223, 202),
 cycle_time = 150
 shots = [(20, 0, 1, 1), (378, 0, 1, 1), (1155, 0, -1, 1), (20, 590, 1, -1), (378, 560, 1, -1), (1155, 590, -1, -1)]
 keep_position = 4
-i = 0
+ball_run_index = 0
 
 run = True
 while run:
@@ -48,14 +48,14 @@ while run:
         if keep_position < 3:
             keep_position += 3
 
-    if i > 10:
-        i = 0
+    if ball_run_index > 273:
+        ball_run_index = 0
         shuffle(shots)
 
     win.blit(bg, (0, 0))
     win.blit(keep_positions[keep_position][0], (keep_positions[keep_position][1], keep_positions[keep_position][2]))
-    win.blit(ball, (shots[0][0] + 21 * i * shots[0][2], shots[0][1] + 21 * i * shots[0][3]))
+    win.blit(ball, (shots[0][0] + min(210, ball_run_index) * shots[0][2], shots[0][1] + min(210, ball_run_index) * shots[0][3]))
     pygame.display.update()
-    i += 1
+    ball_run_index += 21
 
 pygame.quit()
