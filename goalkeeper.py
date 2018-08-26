@@ -10,6 +10,8 @@ pygame.display.set_caption('Goalkeeper Game')
 
 bg = pygame.image.load('bg.png')
 ball = pygame.image.load('ball.png')
+star_green = pygame.image.load('star_green.png')
+star_red = pygame.image.load('star_red.png')
 keep_positions = [(pygame.image.load('keep_1.png'), 223, 202),
                 (pygame.image.load('keep_2.png'), 563, 210),
                 (pygame.image.load('keep_3.png'), 815, 202),
@@ -54,6 +56,10 @@ while run:
 
     win.blit(bg, (0, 0))
     win.blit(keep_positions[keep_position][0], (keep_positions[keep_position][1], keep_positions[keep_position][2]))
+
+    # if ball_run_index > 210: #and keeper is in same position as ball_run_index
+    #     win.blit(ball, (shots[0][0] + min(210, ball_run_index) * shots[0][2], shots[0][1] + min(210, ball_run_index) * shots[0][3]))
+
     win.blit(ball, (shots[0][0] + min(210, ball_run_index) * shots[0][2], shots[0][1] + min(210, ball_run_index) * shots[0][3]))
     pygame.display.update()
     ball_run_index += 21
