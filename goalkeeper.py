@@ -30,11 +30,11 @@ myfont = pygame.font.SysFont('Comic Sans MS', 60)
 
 run = True
 while run:
-    if scores//3 >= 30:
+    if scores >= 30:
         cycle_time = 90
-    elif scores//3 >= 20:
+    elif scores >= 20:
         cycle_time = 110
-    elif scores//3 >= 10:
+    elif scores >= 10:
         cycle_time = 130
 
     pygame.time.delay(cycle_time)
@@ -61,14 +61,15 @@ while run:
         if keep_position < 3:
             keep_position += 3
 
-    if ball_run_index > 273:
+    if ball_run_index > 210:
+        pygame.time.delay(700)
         ball_run_index = 0
         shuffle(shots)
 
     win.blit(bg, (0, 0))
     win.blit(keep_positions[keep_position][0], (keep_positions[keep_position][1], keep_positions[keep_position][2]))
 
-    if ball_run_index > 210:
+    if ball_run_index >= 210:
         if shots[0][4] == keep_position:
             win.blit(star_green, (shots[0][0] + 210 * shots[0][2] - 5, shots[0][1] + 210 * shots[0][3] - 5))
             scores += 1
@@ -79,7 +80,7 @@ while run:
 
     win.blit(ball, (shots[0][0] + min(210, ball_run_index) * shots[0][2], shots[0][1] + min(210, ball_run_index) * shots[0][3]))
 
-    scores_text = myfont.render('Scores: ' + str(scores//3), False, (0, 30, 0))
+    scores_text = myfont.render('Scores: ' + str(scores), False, (0, 30, 0))
     win.blit(scores_text, (450,500))
 
     pygame.display.update()
