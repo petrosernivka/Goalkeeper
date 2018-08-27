@@ -30,6 +30,13 @@ myfont = pygame.font.SysFont('Comic Sans MS', 60)
 
 run = True
 while run:
+    if scores//3 >= 30:
+        cycle_time = 90
+    elif scores//3 >= 20:
+        cycle_time = 110
+    elif scores//3 >= 10:
+        cycle_time = 130
+
     pygame.time.delay(cycle_time)
 
     for event in pygame.event.get():
