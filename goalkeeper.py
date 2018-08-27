@@ -21,6 +21,7 @@ keep_positions = [(pygame.image.load('keep_1.png'), 223, 202),
 
 shots = [(20, 0, 1, 1, 0), (378, 0, 1, 1, 1), (1155, 0, -1, 1, 2),
         (20, 590, 1, -1, 3), (378, 560, 1, -1, 4), (1155, 590, -1, -1, 5)]
+shuffle(shots)
 keep_position = 4
 ball_run_index = 0
 scores = 0
@@ -92,5 +93,20 @@ while run:
     pygame.display.update()
     ball_run_index += 21
 
-pygame.time.delay(3000)
+scores_text = myfont.render('Game over!!!', False, (255, 0, 0))
+win.blit(scores_text, (440,10))
+myfont = pygame.font.SysFont('Comic Sans MS', 30)
+scores_text = myfont.render('''Exit - press "Q"        New game - press "N"''', False, (255, 255, 255))
+win.blit(scores_text, (300,100))
+pygame.display.update()
+
+run = True
+while run:
+    pygame.time.delay(10)
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_q:
+                run = False
+            if event.key == pygame.K_n:
+                run = False
 pygame.quit()
