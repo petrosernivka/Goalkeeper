@@ -27,7 +27,6 @@ ball_run_index = 0
 scores = 0
 
 myfont = pygame.font.SysFont('Comic Sans MS', 60)
-scores_textsurface = myfont.render('Scores: ' + str(scores), False, (0, 30, 0))
 
 run = True
 while run:
@@ -69,18 +68,15 @@ while run:
         else:
             win.blit(star_red, (shots[0][0] + 210 * shots[0][2] - 5, shots[0][1] + 210 * shots[0][3] - 5))
             win.blit(ball, (shots[0][0] + min(210, ball_run_index) * shots[0][2], shots[0][1] + min(210, ball_run_index) * shots[0][3]))
-            scores_textsurface = myfont.render('Scores: ' + str(scores//3), False, (0, 30, 0))
-            win.blit(scores_textsurface, (450,500))
-            pygame.display.update()
-            pygame.time.delay(3000)
             run = False
 
     win.blit(ball, (shots[0][0] + min(210, ball_run_index) * shots[0][2], shots[0][1] + min(210, ball_run_index) * shots[0][3]))
 
-    scores_textsurface = myfont.render('Scores: ' + str(scores//3), False, (0, 30, 0))
-    win.blit(scores_textsurface, (450,500))
+    scores_text = myfont.render('Scores: ' + str(scores//3), False, (0, 30, 0))
+    win.blit(scores_text, (450,500))
 
     pygame.display.update()
     ball_run_index += 21
 
+pygame.time.delay(3000)
 pygame.quit()
