@@ -19,7 +19,6 @@ keep_positions = [(pygame.image.load('keep_1.png'), 223, 202),
                 (pygame.image.load('keep_5.png'), 565, 294),
                 (pygame.image.load('keep_6.png'), 802, 343)]
 
-cycle_time = 150
 shots = [(20, 0, 1, 1, 0), (378, 0, 1, 1, 1), (1155, 0, -1, 1, 2),
         (20, 590, 1, -1, 3), (378, 560, 1, -1, 4), (1155, 590, -1, -1, 5)]
 keep_position = 4
@@ -28,14 +27,20 @@ scores = 0
 
 myfont = pygame.font.SysFont('Comic Sans MS', 60)
 
+win.blit(bg, (0, 0))
+scores_text = myfont.render('To start the game, press any key', False, (255, 255, 255))
+win.blit(scores_text, (140,40))
+pygame.display.update()
+
 run = True
 while run:
-    # if scores >= 30:
-    #     cycle_time = 90
-    # elif scores >= 20:
-    #     cycle_time = 110
-    # elif scores >= 10:
-    #     cycle_time = 130
+    pygame.time.delay(10)
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            run = False
+
+run = True
+while run:
     cycle_time = 150 - min(3, scores // 10) * 20
 
     pygame.time.delay(cycle_time)
