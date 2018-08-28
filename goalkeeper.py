@@ -26,8 +26,8 @@ myfont = pygame.font.SysFont('Comic Sans MS', 30)
 myfont_scor = pygame.font.SysFont('Comic Sans MS', 60)
 
 win.blit(bg, (0, 0))
-scores_text = myfont_scor.render('To start the game, press any key', False, (255, 255, 255))
-win.blit(scores_text, (140,40))
+start_text = myfont_scor.render('To start the game, press any key', False, (255, 255, 255))
+win.blit(start_text, (140,40))
 pygame.display.update()
 
 run = True
