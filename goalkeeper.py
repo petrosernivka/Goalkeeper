@@ -84,7 +84,6 @@ def game():
                 scores += 1
             else:
                 win.blit(star_red, (shots[0][0] + 210 * shots[0][2] - 5, shots[0][1] + 210 * shots[0][3] - 5))
-                win.blit(ball, (shots[0][0] + min(210, ball_run_index) * shots[0][2], shots[0][1] + min(210, ball_run_index) * shots[0][3]))
                 run = False
 
         win.blit(ball, (shots[0][0] + min(210, ball_run_index) * shots[0][2], shots[0][1] + min(210, ball_run_index) * shots[0][3]))
@@ -99,10 +98,10 @@ game()
 
 run = True
 while run:
-    scores_text = myfont_scor.render('Game over!!!', False, (255, 0, 0))
-    win.blit(scores_text, (440,10))
-    scores_text = myfont.render('''Exit - press "Q"        New game - press "N"''', False, (255, 255, 255))
-    win.blit(scores_text, (300,100))
+    end_text = myfont_scor.render('Game over!!!', False, (255, 0, 0))
+    win.blit(end_text, (440,10))
+    end_text = myfont.render('''Exit - press "Q"        New game - press "N"''', False, (255, 255, 255))
+    win.blit(end_text, (300,100))
     pygame.display.update()
 
     for event in pygame.event.get():
